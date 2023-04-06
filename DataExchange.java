@@ -4,7 +4,7 @@ public class DataExchange {
     private boolean  obstacleDedected=false;
     
     private int cmd=1;
-    
+    private float color;
     public DataExchange() {
     	//
     }
@@ -22,6 +22,15 @@ public class DataExchange {
 	public int getCmd() {
 		return cmd;
 	}
+	
+	public void setcolor(float colorvalue) {
+		color=colorvalue;
+		
+	}
+	public float getcolor() {
+		return color;
+	}
+	
 	
 	
 }
