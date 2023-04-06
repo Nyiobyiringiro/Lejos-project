@@ -5,15 +5,16 @@ public class EV3Project {
     private static DataExchange DE;
     private static ObstacleDetector Obstacle;
     private static Linefollower black;
-    //private static Avoidance avoidance;
+    private static Colordetector color;
+    
 	public static void main(String[] args) {
-		DE=new DataExchange();//Data exchange
-		Obstacle=new ObstacleDetector(DE);//Obstacle detector
-		black=new Linefollower(DE);//Line follower
-		//avoidance=new Avoidance(DE);//Obstacle avoidance
+		DE=new DataExchange();
+		Obstacle=new ObstacleDetector(DE);
+		black=new Linefollower(DE);
+	    color=new Colordetector(DE);
 		Obstacle.start();
+		color.start();
         black.start();
-        //avoidance.start();
         while(!Button.ESCAPE.isDown()){
         	// 
         }

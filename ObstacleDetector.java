@@ -11,8 +11,7 @@ public class ObstacleDetector extends Thread{
        private DataExchange DEObj;
 
        private static EV3UltrasonicSensor us = new EV3UltrasonicSensor(SensorPort.S1);
-      /* static EV3LargeRegulatedMotor motorC=new EV3LargeRegulatedMotor(MotorPort.C);
-	   static EV3LargeRegulatedMotor motorD=new EV3LargeRegulatedMotor(MotorPort.D);*/
+      
        final SampleProvider sp = us.getDistanceMode();
        int distanceValue = 0;
        private final int securityDistance = 25;
@@ -36,8 +35,7 @@ public class ObstacleDetector extends Thread{
 	 	           LCD.refresh();
 	 	           Sound.twoBeeps();
 	 	           Sound.twoBeeps();
-	             /*  motorC.stop();    
-           	       motorD.stop();*/
+	            
 	           }
 	           
 	      }
