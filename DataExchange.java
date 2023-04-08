@@ -5,6 +5,7 @@ public class DataExchange {
     
     private int cmd=1;
     private float color;
+    private int count = 1;
     public DataExchange() {
     	//
     }
@@ -22,15 +23,20 @@ public class DataExchange {
 	public int getCmd() {
 		return cmd;
 	}
-	
-	public void setcolor(float colorvalue) {
-		color=colorvalue;
-		
-	}
-	public float getcolor() {
+	public float getColor() {
 		return color;
 	}
+	public void setColor(float color) {
+		this.color = color;
+	}
 	
+	public int getCycle() {
+		return count;
+	}
+
+	public void setCycle(int cycle) {
+		this.count = this.count + cycle;
+	}
 	
 	
 }

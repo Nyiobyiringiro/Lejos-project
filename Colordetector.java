@@ -1,7 +1,6 @@
-import lejos.hardware.Button;
 import lejos.hardware.port.SensorPort;
 import lejos.hardware.sensor.EV3ColorSensor;
-import lejos.robotics.SampleProvider;
+import lejos.hardware.sensor.SensorMode;
 
 public class Colordetector extends Thread{
 	
@@ -12,18 +11,23 @@ public class Colordetector extends Thread{
            DEObj = DE;
            cs.setFloodlight(true);
                 }
-	       
+		
+		
+		SensorMode csp =cs.getRedMode();
+        float colorvalue;
+        
 		public void run() {
-			  SampleProvider csp =cs.getRedMode();
-		        float colorvalue;
+//			  SampleProvider csp =cs.getRedMode();
+
        
-		        while(!Button.ESCAPE.isDown())
+		        while(true)
 	            { 
 	        	 float [] colorsample = new float[csp.sampleSize()];
 	  		     csp.fetchSample(colorsample, 0);
 	  		     colorvalue = (colorsample[0]); 
 	  		     
-	             DEObj.setcolor(colorvalue);
+	             DEObj.setColor(colorvalue);
+	             System.out.println(colorvalue);
 	            }
 	    }
 	 

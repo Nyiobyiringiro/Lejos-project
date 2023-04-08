@@ -1,4 +1,7 @@
 //import lejos.hardware.lcd.LCD;
+import java.io.File;
+
+import lejos.hardware.Sound;
 import lejos.hardware.motor.EV3LargeRegulatedMotor;
 import lejos.hardware.port.MotorPort;
 import lejos.utility.Delay;
@@ -15,59 +18,63 @@ public class Linefollower extends Thread {
                  }
 	       
 		public void run() {
-			float colorvalue=DEObj.getcolor();
+			
 			while(true){
-				
+				float colorvalue=DEObj.getColor();
+				int count = DEObj.getCycle();
 			     if(DEObj.getCmd()==1) {
-			    	 if(colorvalue<=0.05) {
-		     		    	motorD.setSpeed(200);    
-		                	motorC.setSpeed(340); 
+			    	 if(colorvalue<=0.15) {
+		     		    	motorD.setSpeed(180);    
+		                	motorC.setSpeed(300); 
 		            		motorC.forward();
 		    	       		motorD.forward();
 		    	       		     	       		 
 		    	       		 }
 		     		      else {
 		     		    	 
-		     		    	 motorD.setSpeed(340);    
-			                 motorC.setSpeed(200); 
+		     		    	 motorD.setSpeed(300);    
+			                 motorC.setSpeed(180); 
 			            	 motorC.forward();
 			    	       	 motorD.forward();
 			       		 }
 				     }
 			     else {
-			    	int count=0;
-			    	if(count==0) {
-			    		motorD.setSpeed(180);
-			    		motorC.setSpeed(320); 
+			    	 DEObj.setCycle(1);
+			 
+					if(count <= 1) {
+			    		motorD.setSpeed(360);
+			    		motorC.setSpeed(180); 
 
 			    		motorC.forward();
 			    		motorD.forward();
 		 
-						Delay.msDelay(1000);
-						//Sound.buzz();
+						Delay.msDelay(1500); 
 						
-						motorD.setSpeed(250);
-						motorC.setSpeed(120);
+						
+						motorD.setSpeed(180);
+						motorC.setSpeed(360);
 
 						motorD.forward();
 						motorC.forward();
 						
 						Delay.msDelay(3000); 
-						//Sound.buzz();
 						
 						
-						motorD.setSpeed(90);
-						motorC.setSpeed(300);
+						
+						motorD.setSpeed(360);
+						motorC.setSpeed(180);
 
 						motorC.forward();
 						motorD.forward();
 
-						Delay.msDelay(750);
+						Delay.msDelay(1200);
 			    	}
 			    	else {
 			    		motorD.stop();
 			    		motorC.stop();
-			    		
+			    		Sound.playSample(new File ("flexa.wav"), Sound.VOL_MAX);
+						Sound.playSample(new File ("flexa.wav"), Sound.VOL_MAX);
+						Delay.msDelay(12000);
 			    	}
 	     		    }
 	            }
