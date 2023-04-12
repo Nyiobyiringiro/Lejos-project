@@ -1,4 +1,4 @@
-
+//This class is used to exchange data in the three threads using an object to call this class.
 public class DataExchange {
     
     private boolean  obstacleDedected=false;
