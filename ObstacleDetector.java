@@ -9,11 +9,13 @@ import lejos.robotics.SampleProvider;
 public class ObstacleDetector extends Thread{
 	
        private DataExchange DEObj;
-
+  //Initializing the port that is connected to EV3UltrasonicSensor.
        private static EV3UltrasonicSensor us = new EV3UltrasonicSensor(SensorPort.S1);
-      
+   //setting the color sensor in the getRedMode. 
        final SampleProvider sp = us.getDistanceMode();
        int distanceValue = 0;
+       
+  //setting the obstacle distance threshold to 25cm.
        private final int securityDistance = 25;
 
         public ObstacleDetector(DataExchange DE){
@@ -21,6 +23,7 @@ public class ObstacleDetector extends Thread{
             
                   }
         public void run(){
+  //this is a loop to detector the object distance from the robot.   	
 	       while(true){
 	    	float [] sample = new float[sp.sampleSize()];
    		    sp.fetchSample(sample, 0);
