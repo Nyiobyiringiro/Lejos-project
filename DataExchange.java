@@ -30,12 +30,12 @@ public class DataExchange {
 		this.color = color;
 	}
 	
-	public int getCycle() {
+	public int getRound() {
 		return count;
 	}
 
-	public void setCycle(int cycle) {
-		this.count = this.count + cycle;
+	public void setRound(int Round) {
+		this.count = this.count + Round;
 	}
 	
 	

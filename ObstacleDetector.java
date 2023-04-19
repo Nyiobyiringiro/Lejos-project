@@ -35,7 +35,7 @@ public class ObstacleDetector extends Thread{
 	 	           LCD.drawString("Object found!", 0,1);
 	 	           LCD.refresh();
 	 	           Sound.twoBeeps();
-	 	           Sound.twoBeeps();
+	 	           
 	            
 	           }
 	           

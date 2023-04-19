@@ -2,7 +2,7 @@ import lejos.hardware.Button;
 import lejos.hardware.lcd.LCD;
 
 public class EV3Project {
-    private static DataExchange DE;
+  	private static DataExchange DE;
     private static ObstacleDetector Obstacle;
     private static Linefollower black;
     private static Colordetector color;

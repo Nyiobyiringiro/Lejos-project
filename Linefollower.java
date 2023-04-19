@@ -1,6 +1,4 @@
-//import lejos.hardware.lcd.LCD;
 import java.io.File;
-
 import lejos.hardware.Sound;
 import lejos.hardware.motor.EV3LargeRegulatedMotor;
 import lejos.hardware.port.MotorPort;
@@ -21,25 +19,28 @@ public class Linefollower extends Thread {
 			
 			while(true){
 				float colorvalue=DEObj.getColor();
-				int count = DEObj.getCycle();
+				int count = DEObj.getRound();
+				
 			     if(DEObj.getCmd()==1) {
 			    	 if(colorvalue<=0.15) {
-		     		    	motorD.setSpeed(220);    
-		                	motorC.setSpeed(340); 
+		     		    	motorD.setSpeed(360);    
+		                	motorC.setSpeed(140); 
 		            		motorC.forward();
 		    	       		motorD.forward();
 		    	       		     	       		 
 		    	       		 }
 		     		      else {
+		     		    	  
 		     		    	 
-		     		    	 motorD.setSpeed(300);    
-			                 motorC.setSpeed(180); 
-			            	 motorC.forward();
-			    	       	 motorD.forward();
+			    	        motorD.setSpeed(140);    
+               		    	motorC.setSpeed(360);
+		     		    	motorC.forward();
+		     		    	motorD.forward();
+		     		 
 			       		 }
 				     }
 			     else {
-			    	 DEObj.setCycle(1);
+			    	 DEObj.setRound(1);
 			 
 					if(count <= 1) {
 			    		motorD.setSpeed(360);
