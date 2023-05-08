@@ -6,6 +6,8 @@ public class DataExchange {
     private int cmd=1;
     private float color;
     private int count = 1;
+    private int motorc;
+    private int motord; 
     public DataExchange() {
     	//
     }
@@ -37,6 +39,19 @@ public class DataExchange {
 	public void setRound(int Round) {
 		this.count = this.count + Round;
 	}
+	public int getMotorc() {
+		return motorc;
+	}
+	public void setMotorc(int motorc) {
+		this.motorc = motorc;
+	}
+	public int getMotord() {
+		return motord;
+	}
+	public void setMotord(int motord) {
+		this.motord = motord;
+	}
+	
 	
 	
 }

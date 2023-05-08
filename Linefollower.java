@@ -18,13 +18,15 @@ public class Linefollower extends Thread {
 		public void run() {
 			
 			while(true){
+				int highspeed=DEObj.getMotorc();
+				int lowspeed=DEObj.getMotord();
 				float colorvalue=DEObj.getColor();
 				int count = DEObj.getRound();
 				
 			     if(DEObj.getCmd()==1) {
 			    	 if(colorvalue<=0.15) {
-		     		    	motorD.setSpeed(360);    
-		                	motorC.setSpeed(140); 
+		     		    	motorD.setSpeed(highspeed);    
+		                	motorC.setSpeed(lowspeed); 
 		            		motorC.forward();
 		    	       		motorD.forward();
 		    	       		     	       		 
@@ -32,8 +34,8 @@ public class Linefollower extends Thread {
 		     		      else {
 		     		    	  
 		     		    	 
-			    	        motorD.setSpeed(140);    
-               		    	motorC.setSpeed(360);
+			    	        motorD.setSpeed(lowspeed);    
+               		    	motorC.setSpeed(highspeed);
 		     		    	motorC.forward();
 		     		    	motorD.forward();
 		     		 
