@@ -7,8 +7,16 @@ public class DataExchange {
     private float color;
     private int count = 1;
     private int motorc;
-    private int motord; 
-    public DataExchange() {
+    private int motord;
+    private int sec_distance; 
+    private float linecolor;
+    public float getLinecolor() {
+		return linecolor;
+	}
+	public void setLinecolor(float linecolor) {
+		this.linecolor = linecolor;
+	}
+	public DataExchange() {
     	//
     }
     public void setObstacleDedected(boolean status) {
@@ -50,6 +58,12 @@ public class DataExchange {
 	}
 	public void setMotord(int motord) {
 		this.motord = motord;
+	}
+	public int getSec_distance() {
+		return sec_distance;
+	}
+	public void setSec_distance(int sec_distance) {
+		this.sec_distance = sec_distance;
 	}
 	
 	

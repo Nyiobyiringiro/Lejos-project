@@ -24,7 +24,7 @@ public class Linefollower extends Thread {
 				int count = DEObj.getRound();
 				
 			     if(DEObj.getCmd()==1) {
-			    	 if(colorvalue<=0.15) {
+			    	 if(colorvalue<=DEObj.getLinecolor()) {
 		     		    	motorD.setSpeed(highspeed);    
 		                	motorC.setSpeed(lowspeed); 
 		            		motorC.forward();

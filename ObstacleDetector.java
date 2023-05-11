@@ -14,7 +14,7 @@ public class ObstacleDetector extends Thread{
        int distanceValue = 0;
        
   //setting the obstacle distance threshold to 25cm.
-       private final int securityDistance = 25;
+       private final int securityDistance = DEObj.getSec_distance();
 
         public ObstacleDetector(DataExchange DE){
              DEObj = DE;
