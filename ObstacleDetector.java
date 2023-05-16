@@ -26,6 +26,7 @@ public class ObstacleDetector extends Thread{
 	    	float [] sample = new float[sp.sampleSize()];
    		    sp.fetchSample(sample, 0);
                distanceValue = (int)(sample[0]*100);
+               DEObj.setDistanceValue(distanceValue);
 	           if( distanceValue> securityDistance){
 	                   DEObj.setCmd(1);
 	             }

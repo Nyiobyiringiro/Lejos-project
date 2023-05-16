@@ -10,7 +10,9 @@ public class DataExchange {
     private int motord;
     private int sec_distance; 
     private float linecolor;
-    public float getLinecolor() {
+    private int distanceValue;
+    
+	public float getLinecolor() {
 		return linecolor;
 	}
 	public void setLinecolor(float linecolor) {
@@ -64,6 +66,12 @@ public class DataExchange {
 	}
 	public void setSec_distance(int sec_distance) {
 		this.sec_distance = sec_distance;
+	}
+	public int getDistanceValue() {
+		return distanceValue;
+	}
+	public void setDistanceValue(int distanceValue) {
+		this.distanceValue = distanceValue;
 	}
 	
 	
