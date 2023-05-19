@@ -1,3 +1,4 @@
+package restful;
 import lejos.hardware.Sound;
 import lejos.hardware.lcd.LCD;
 import lejos.hardware.port.SensorPort;
@@ -21,7 +22,8 @@ public class ObstacleDetector extends Thread{
         public void run(){
         	
         	 //setting the obstacle distance threshold to 25cm.
-            final int securityDistance = DEObj.getSec_distance();
+//            int securityDistance = DEObj.getSec_distance();
+//        	int securityDistance = DEObj.getSec_distance();
 
   //this is a loop to detector the object distance from the robot.   	
 	       while(true){
@@ -29,12 +31,13 @@ public class ObstacleDetector extends Thread{
    		    sp.fetchSample(sample, 0);
                distanceValue = (int)(sample[0]*100);
                DEObj.setDistanceValue(distanceValue);
-	           if( distanceValue> securityDistance){
+               if( distanceValue> DEObj.getSec_distance()){
 	                   DEObj.setCmd(1);
 	             }
 	          
 	            else {
 	               DEObj.setCmd(0);
+	               DEObj.setStatus(1);
 	 	           LCD.drawString("Object found!", 0,1);
 	 	           LCD.refresh();
 	 	           Sound.twoBeeps();

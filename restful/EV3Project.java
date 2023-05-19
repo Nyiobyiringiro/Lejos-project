@@ -1,3 +1,4 @@
+package restful;
 import lejos.hardware.Button;
 import lejos.hardware.lcd.LCD;
 
@@ -12,10 +13,13 @@ public class EV3Project {
 		Obstacle=new ObstacleDetector(DE);
 		black=new Linefollower(DE);
 	    color=new Colordetector(DE);
+	    test = new Httptest(DE);
 		Obstacle.start();
 		color.start();
         black.start();
         test.start();
+        
+        
         while(!Button.ESCAPE.isDown()){
         	// 
         }
